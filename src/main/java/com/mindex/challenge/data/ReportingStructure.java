@@ -13,5 +13,4 @@ import lombok.NoArgsConstructor;
 public class ReportingStructure {
     private Employee employee;
     private Long numberOfReports;
-
 }

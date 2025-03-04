@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -44,7 +46,15 @@ public class modelTest {
         assertEquals("Candidate", e.getPosition());
         assertEquals("Engineering", e.getDepartment());
 
+    }
 
-
+    @Test
+    public void testCompensation() {
+        //All args constructor, toString
+        Compensation comp = new Compensation("TestId", 12345.0, LocalDate.now());
+        assertEquals("Compensation(employeeId=TestId, salary=12345.0, effectiveDate=2025-03-03)", comp.toString());
+        assertEquals("TestId", comp.getEmployeeId());
+        assertEquals(12345.0, comp.getSalary());
+        assertEquals(LocalDate.now(), comp.getEffectiveDate());
     }
 }

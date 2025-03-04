@@ -43,7 +43,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee update(Employee employee) {
         LOG.debug("Updating employee [{}]", employee);
-
         return employeeRepository.save(employee);
     }
 }
